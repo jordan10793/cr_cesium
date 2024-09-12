@@ -10,18 +10,18 @@
     <meta name="description" content="Load GeoJSON or TopoJSON data and apply custom styling.">
     <meta name="cesium-sandcastle-labels" content="Showcases, Tutorials, DataSources">
     <title>Cesium CR</title>
-    <script type="text/javascript" src="C:/Users/jorge/Downloads/Cesium-1.103/Apps/Sandcastle/Sandcastle-header.js"></script>
-    <script src="C:/Users/jorge/Downloads/Cesium-1.103/Build/CesiumUnminified/Cesium.js"></script>
-    <script>window.CESIUM_BASE_URL = "C:/Users/jorge/Downloads/Cesium-1.103/Build/CesiumUnminified/";</script>
+    <script type="text/javascript" src="./Apps/Sandcastle/Sandcastle-header.js"></script>
+    <script src="./Build/CesiumUnminified/Cesium.js"></script>
+    <script>window.CESIUM_BASE_URL = "./Build/CesiumUnminified/";</script>
   </head>
   <body
     class="sandcastle-loading"
-    data-sandcastle-bucket="C:/Users/jorge/Downloads/Cesium-1.103/Apps/Sandcastle/templates/bucket-requirejs.html"
+    data-sandcastle-bucket="./Apps/Sandcastle/templates/bucket-requirejs.html"
   >
 <style>
       @import url(Apps/Sandcastle/templates/bucket.css);
     </style>
-    <div id="cesiumContainer"></div>
+    <div id="cesiumContainer" class="fullSize"></div>
     <div id="loadingOverlay"><h1>Loading...</h1></div>
     <div id="toolbar"></div>
     <script id="cesium_sandcastle_script">
@@ -34,7 +34,7 @@ const viewer = new Cesium.Viewer("cesiumContainer");
 Sandcastle.addDefaultToolbarButton("Default styling", function () {
   viewer.dataSources.add(
     Cesium.GeoJsonDataSource.load(
-      "C:/Users/jorge/Downloads/Cesium-1.103/Apps/SampleData/prov_data.geojson"
+      "./Apps/SampleData/prov_data.geojson"
     )
   );
 });
@@ -43,7 +43,7 @@ Sandcastle.addDefaultToolbarButton("Default styling", function () {
 Sandcastle.addToolbarButton("Basic styling", function () {
   viewer.dataSources.add(
     Cesium.GeoJsonDataSource.load(
-      "C:/Users/jorge/Downloads/Cesium-1.103/Apps/SampleData/prov_data.geojson",
+      "./Apps/SampleData/prov_data.geojson",
       {
         stroke: Cesium.Color.HOTPINK,
         fill: Cesium.Color.PINK.withAlpha(0.5),
@@ -59,7 +59,7 @@ Sandcastle.addToolbarButton("Custom styling", function () {
   Cesium.Math.setRandomNumberSeed(0);
 
   const promise = Cesium.GeoJsonDataSource.load(
-    "C:/Users/jorge/Downloads/Cesium-1.103/Apps/SampleData/prov_data.geojson"
+    "./Apps/SampleData/prov_data.geojson"
   );
   promise
     .then(function (dataSource) {
